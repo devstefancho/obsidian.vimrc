@@ -1,3 +1,5 @@
+unmap <Space>
+
 imap jk <Esc>
 
 " Yank to system clipboard
@@ -44,10 +46,16 @@ nmap sv :split_vertical
 exmap split_horizontal obcommand workspace:split-horizontal
 nmap ss :split_horizontal
 
+" Quit Buffer
 exmap q obcommand workspace:close
 
-exmap open_file obcommand file-explorer:open
-nmap <Space>sf open_file
+" Map to Open File
+exmap open_file obcommand switcher:open 
+nmap <Space>sf :open_file
+
+" Go Into Link
+exmap goto_link obcommand editor:follow-link
+nmap gd :goto_link
 
 """""""""""""""""""""""""""""""""""""""""""""""" "
 """""""""""" All Available Commands """""""""""" "
